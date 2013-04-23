@@ -7,4 +7,9 @@ class Authentication < ActiveRecord::Base
 	def self.from_omniauth(auth)
 		find_by_provider_and_uid(auth['provider'], auth['uid'])
 	end
+
+	scope :instagram, where(provider: "instagram")
+	scope :facebook, where(provider: "facebook")
+	scope :flickr, where(provider: "flickr")
+
 end
