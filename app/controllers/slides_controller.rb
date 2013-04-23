@@ -8,6 +8,12 @@ class SlidesController < ApplicationController
 	end
 
 	def create
+		@slide = current_user.slides.build(params[:slide])
+		if @slide.save
+			#flash success and redirect to a page where they can add photos
+		else
+			render :new
+		end
 	end
 
 
