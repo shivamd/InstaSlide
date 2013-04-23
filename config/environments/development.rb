@@ -4,6 +4,14 @@ Instaslide::Application.configure do
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
+  api_keys = YAML.load_file(Rails.root.join('config','keys.yml'))
+  ENV['INSTAGRAM_APP_ID'] = api_keys['instagram_key']
+  ENV['INSTAGRAM_SECRET'] = api_keys['instagram_secret']
+  ENV['FLICKR_APP_ID']    = api_keys['flickr_key']
+  ENV['FLICKR_SECRET']    = api_keys['flickr_secret']
+  ENV['FACEBOOK_APP_ID']  = api_keys['facebook_key']
+  ENV['FACEBOOK_SECRET']  = api_keys['facebook_secret']
+  
   config.cache_classes = false
 
   # Log error messages when you accidentally call methods on nil.
