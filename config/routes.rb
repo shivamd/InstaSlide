@@ -1,4 +1,7 @@
 Instaslide::Application.routes.draw do
+  resources :authentications, only: [:index, :create, :destroy]
+  match '/auth/:provider/callback' => 'authentications#create'
+  root to: 'autentications#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
