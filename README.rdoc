@@ -1,2 +1,3 @@
 SideProject.
+Work In Progress
 InstaSlide is a slideshow app integrated with the Facebook,Instagram and Flickr API's.
