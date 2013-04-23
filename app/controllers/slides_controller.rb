@@ -5,6 +5,7 @@ class SlidesController < ApplicationController
 
 	def new
 		@slide = current_user.slides.build
+		photo = @slide.photos.build
 	end
 
 	def create
