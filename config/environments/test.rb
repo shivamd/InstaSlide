@@ -7,6 +7,14 @@ Instaslide::Application.configure do
   # and recreated between test runs. Don't rely on the data there!
   config.cache_classes = true
 
+  api_keys = YAML.load_file(Rails.root.join('config','keys.yml'))
+  ENV['INSTAGRAM_APP_ID'] = api_keys['instagram_key']
+  ENV['INSTAGRAM_SECRET'] = api_keys['instagram_secret']
+  ENV['FLICKR_APP_ID']    = api_keys['flickr_key']
+  ENV['FLICKR_SECRET']    = api_keys['flickr_secret']
+  ENV['FACEBOOK_APP_ID']  = api_keys['facebook_key']
+  ENV['FACEBOOK_SECRET']  = api_keys['facebook_secret']
+
   # Configure static asset server for tests with Cache-Control for performance
   config.serve_static_assets = true
   config.static_cache_control = "public, max-age=3600"
