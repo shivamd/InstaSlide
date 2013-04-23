@@ -1,6 +1,10 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'omniauth-flickr'
+gem 'omniauth-instagram'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
