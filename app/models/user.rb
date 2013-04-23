@@ -3,4 +3,5 @@ class User < ActiveRecord::Base
 
 	validates :name, presence: true
 	has_many :authentications
+	has_many :slides
 end
