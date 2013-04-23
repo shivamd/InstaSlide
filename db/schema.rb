@@ -11,13 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423152445) do
+ActiveRecord::Schema.define(:version => 20130423160753) do
 
   create_table "authentications", :force => true do |t|
     t.integer "user_id"
     t.string  "provider"
     t.string  "uid"
     t.string  "access_token"
+  end
+
+  create_table "photos", :force => true do |t|
+    t.string  "url"
+    t.integer "user_id"
+    t.integer "slide_id"
   end
 
   create_table "slides", :force => true do |t|
