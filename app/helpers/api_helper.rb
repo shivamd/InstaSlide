@@ -12,4 +12,8 @@ module ApiHelper
         fb_graph.get_picture(album['cover_photo'])]
     end
   end
+
+  def fb_photos(album_id)
+  	fb_graph.get_connections(album_id, "photos")
+  end
 end
