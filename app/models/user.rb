@@ -7,4 +7,17 @@ class User < ActiveRecord::Base
 	has_many :photos, through: :slides
 
 	delegate :facebook, :instagram, :flickr, to: :authentications
+
+	def facebook_token
+		facebook.first.access_token
+	end
+
+	def instagram_token
+		instagram.first.access_token
+	end
+
+	def flickr_token
+		flickr.first.access_token
+	end
+
 end
