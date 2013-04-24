@@ -1,6 +1,8 @@
 class SlidesController < ApplicationController
 	before_filter :redirect_unless_signed_in
-	def index 
+	respond_to :json
+	include ApiHelper
+	def index
 	end
 
 	def new
@@ -15,6 +17,10 @@ class SlidesController < ApplicationController
 		else
 			render :new
 		end
+	end
+
+	def facebook_albums
+		render json: fb_albums_info
 	end
 
 
