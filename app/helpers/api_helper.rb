@@ -4,12 +4,12 @@ module ApiHelper
     @graph = Koala::Facebook::API.new(current_user.facebook_token)
   end
 
-  def fb_album_info
+  def fb_albums_info
     fb_graph.get_connections("me", "albums").map do |album|
-      [ album["id"],
+      Hash[[:id, :name, :link, :cover_photo].zip([ album["id"],
         album["name"],
         album["link"],
-        fb_graph.get_picture(album['cover_photo'])]
+        fb_graph.get_picture(album['cover_photo'])])]
     end
   end
 
