@@ -15,3 +15,18 @@
 	  <%= f.submit "Create Slide" %>
 	<% end %>
 </div>
+
+<div id="facebook">
+  <h2>Facebook Photos</h2>
+  <% fb_albums_info.each do |album| %>
+    <div class="main">
+  	  <%= link_to album[:name], '#', class: album[:id] %>
+      <%= image_tag album[:cover_photo], size: "100x100", class: album[:id] %>
+      <div id="<%= album[:id] %>" class="fb-photos">
+    	  <% fb_photos(album[:id]).each do |photo| %>
+          <%= image_tag photo['source'], size: "100x100" %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>
