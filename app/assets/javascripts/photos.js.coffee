@@ -34,9 +34,13 @@ $ ->
 		  $("div##{album_id} .fb-photos").append("<img class='slideshow' src='#{photo['source']}' width='100' height='100'>")
 
 	$('#facebook').on 'click', '.fb-photos img.slideshow', ->
-		$(@).toggleClass('selected')
 		image_url = $(@).attr('src');
-		$('form').append("<input type='hidden' name='photos[]' value='#{image_url}'>");
+		hidden_field = "<input type='hidden' name='photos[]' value='#{image_url}'>"
+		$(@).toggleClass('selected')
+		if $(@).hasClass('selected')
+		  $('form').append(hidden_field)
+		else
+		  $("form input[value='#{image_url}']").remove()
 
 
 
