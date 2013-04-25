@@ -30,7 +30,7 @@ end
 
 gem 'jquery-rails'
 
-group :test, :development do 
+group :test, :development do
 	gem 'rspec-rails'
 	gem 'capybara'
 	gem 'factory_girl_rails'
@@ -50,4 +50,4 @@ end
 # gem 'capistrano'
 
 # To use debugger
-# gem 'debugger'
+gem 'debugger'
