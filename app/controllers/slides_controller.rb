@@ -33,6 +33,8 @@ class SlidesController < ApplicationController
 		render json: fb_photos(params[:album_id])
 	end
 
-
+	def instagram_photos
+		render json: ig_photos
+	end
 
 end

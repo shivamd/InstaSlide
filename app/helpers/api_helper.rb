@@ -16,5 +16,10 @@ module ApiHelper
   def fb_photos(album_id)
   	fb_graph.get_connections(album_id, "photos")
   end
+
+  def ig_photos
+    Instagram.access_token = current_user.instagram_token
+    Instagram.user_recent_media
+  end
 end
 
