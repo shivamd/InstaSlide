@@ -20,6 +20,11 @@ class SlidesController < ApplicationController
 		end
 	end
 
+	def show
+		@slide = Slide.find(params[:id])
+		@photos = @slide.photos
+	end
+
 	def facebook_albums
 		render json: fb_albums_info
 	end
@@ -27,6 +32,7 @@ class SlidesController < ApplicationController
 	def facebook_photos
 		render json: fb_photos(params[:album_id])
 	end
+
 
 
 end
