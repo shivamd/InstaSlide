@@ -25,3 +25,7 @@ $ ->
 		  success: (photos) ->
 		  	renderPhotos(photos)
 		$(@).parent().children('img').toggle()
+
+	renderPhotos = (photos) ->
+		for photo in photos
+			$('div.fb-photos').append("<img src='#{photo['source']}' width='100' height='100'>")
