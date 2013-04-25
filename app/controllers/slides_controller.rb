@@ -13,7 +13,7 @@ class SlidesController < ApplicationController
 	def create
 		@slide = current_user.slides.build(params[:slide])
 		if @slide.save
-			@slide.add_photos(params[:photos])
+			@slide.add_photos(params[:photos], current_user.id)
 		else
 			render :new
 		end
