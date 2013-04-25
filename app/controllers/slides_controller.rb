@@ -14,6 +14,7 @@ class SlidesController < ApplicationController
 		@slide = current_user.slides.build(params[:slide])
 		if @slide.save
 			@slide.add_photos(params[:photos], current_user.id)
+			redirect_to @slide
 		else
 			render :new
 		end
