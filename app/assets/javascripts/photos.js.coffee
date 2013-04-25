@@ -1,31 +1,36 @@
 $ ->
-	$('div.main a').click (e) ->
+	$('div.main').on 'click', '.fb-album', (e) ->
 		e.preventDefault()
-		album_id = $(this).attr('class')
-		$("img.#{album_id}").toggle()
-		$("div##{album_id}").toggle()
+		id = $(this).attr('class').split(' ')[0]
+		$("img.#{id}").toggle()
+		$(@).siblings('.fb-photos').toggle()
 
 	$.ajax
-			method:'get'
-			url: '/slides/facebook-albums'
-			success: (albums) ->
-				renderAlbums(albums) # render album html to some place in the dom
+		method:'get'
+		url: '/slides/facebook-albums'
+		success: (albums) ->
+			renderAlbums(albums)
+			callToPhotos(albums)
 
 	renderAlbums = (albums) ->
 		for album in albums
-			$('#facebook .main').append("<div class='album-info'><a class='#{album['id']} fb-album' href='#'>#{album['name']}</a>
+			$('#facebook .main').append("<div id='#{ album['id'] }' class='album-info'><a class='#{album['id']} fb-album' href='#'>#{album['name']}</a>
 			<img src=#{album['cover_photo']} width='100' height= '100' class='#{album['id']} fb-album'></div>")
 
-	$('#facebook').on 'click', '.fb-album', (e) ->
-		album_id = $(@).attr('class').split(' ')[0]
-		e.preventDefault()
-		$.ajax
-		  method: "get"
-		  url: "/slides/#{album_id}/photos"
-		  success: (photos) ->
-		  	renderPhotos(photos)
-		$(@).parent().children('img').toggle()
+	callToPhotos = (albums) ->
+		for album in albums
+			getPhotos(album)
 
-	renderPhotos = (photos) ->
-		for photo in photos
-			$('div.fb-photos').append("<img src='#{photo['source']}' width='100' height='100'>")
+	getPhotos = (album) ->
+		  $.ajax
+		    method: "get"
+		    url: "/slides/#{album['id']}/photos"
+		    success: (photos) ->
+		      renderPhotos(photos, album['id'])
+
+
+	renderPhotos = (photos, album_id) ->
+	  $("div##{album_id}").append("<div class='fb-photos'</div>")
+	  for photo in photos
+		  $("div##{album_id} .fb-photos").append("<img src='#{photo['source']}' width='100' height='100'>")
+
