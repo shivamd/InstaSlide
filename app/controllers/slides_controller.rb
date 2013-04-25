@@ -23,5 +23,9 @@ class SlidesController < ApplicationController
 		render json: fb_albums_info
 	end
 
+	def facebook_photos
+		render json: fb_photos(params[:album_id])
+	end
+
 
 end
