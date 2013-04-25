@@ -13,8 +13,8 @@ $ ->
 
 	renderAlbums = (albums) ->
 		for album in albums
-			$('#facebook .main').append("<a class='#{album['id']} fb-album' href='#'>#{album['name']}</a>
-			<img src=#{album['cover_photo']} width='100' height= '100' class='#{album['id']} fb-album'>")
+			$('#facebook .main').append("<div class='album-info'><a class='#{album['id']} fb-album' href='#'>#{album['name']}</a>
+			<img src=#{album['cover_photo']} width='100' height= '100' class='#{album['id']} fb-album'></div>")
 
 	$('#facebook').on 'click', '.fb-album', (e) ->
 		album_id = $(@).attr('class').split(' ')[0]
