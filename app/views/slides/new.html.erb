@@ -9,9 +9,6 @@
 	  <%= f.label :description %>
 	  <%= f.text_area :description %>
 
-	  <%= f.fields_for :photos, @slide.photos.build do |p| %>
-	 	<% end %>
-
 	  <%= f.submit "Create Slide" %>
 	<% end %>
 </div>
