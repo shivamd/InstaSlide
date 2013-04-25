@@ -24,3 +24,4 @@ $ ->
 		  url: "/slides/#{album_id}/photos"
 		  success: (photos) ->
 		  	renderPhotos(photos)
+		$(@).parent().children('img').toggle()
