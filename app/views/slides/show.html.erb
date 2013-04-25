@@ -1,0 +1,10 @@
+<div class="slideshow">
+	<h1><%= @slide.name %></h1>
+	<p><%= @slide.description %></p>
+
+	<% @photos.each do |photo| %>
+	  <ul>
+	  	<li><%= image_tag photo.url %></li>
+	  </ul>
+	<% end %>
+</div>
