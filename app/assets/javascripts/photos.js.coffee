@@ -28,9 +28,12 @@ $ ->
 		    success: (photos) ->
 		      renderPhotos(photos, album['id'])
 
-
 	renderPhotos = (photos, album_id) ->
 	  $("div##{album_id}").append("<div class='fb-photos'</div>")
 	  for photo in photos
 		  $("div##{album_id} .fb-photos").append("<img class='slideshow' src='#{photo['source']}' width='100' height='100'>")
+
+	$('#facebook').on 'click', '.fb-photos img.slideshow', selectImage # define method to select an image
+
+
 
