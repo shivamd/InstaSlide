@@ -35,5 +35,14 @@ $ ->
 
 	$('#facebook').on 'click', '.fb-photos img.slideshow', selectImage # define method to select an image
 
+	selectImage = ->
+		$(@).toggleClass('selected')
+		image_url = $(@).attr('src');
+		$('form').append("<input type='hidden' name='photos[]' value='#{image_url}'>");
+
+
+
+
+
 
 
