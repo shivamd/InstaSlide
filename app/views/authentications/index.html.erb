@@ -9,21 +9,21 @@
 	  <% if facebook_token? %>
       <p>You are logged in with facebook</p>
     <% else %>
-      <%= link_to "Sign up with facebook", '/auth/facebook', class: "auth-button" %>
+      <%= link_to "sign up with facebook", '/auth/facebook', class: "auth-button" %>
     <% end %>
 
     <% if instagram_token? %>
       <p>You are logged in with instragram </p>
     <% else %>
-      <%= link_to "Sign up with instagram", '/auth/instagram', class: "auth-button" %>
+      <%= link_to "sign up with instagram", '/auth/instagram', class: "auth-button" %>
     <% end %>
 
     <% if flickr_token? %>
       <p>You are logged in with flickr</p>
     <% else %>
-      <%= link_to "Sign up with flickr", '/auth/flickr', class: "auth-button" %>
+      <%= link_to "sign up with flickr", '/auth/flickr', class: "auth-button" %>
     <% end %>
   </div>
-  <%= link_to "Create a slide", new_slide_path, class: "slide-button" %>
+  <%= link_to "create a slide", new_slide_path, class: "slide-button" %>
 
 </div>
