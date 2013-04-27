@@ -36,7 +36,6 @@ $ ->
 	renderPhotos = (photos, album_id) ->
 	  $("div##{album_id}").append("<div class='fb-photos'</div>")
 	  for photo in photos
-	  	debugger
 		  $("div##{album_id} .fb-photos").append("<img class='slideshow'
 		  	                                           data-standard-image='#{photo['source']}'
 		  	                                           src='#{photo['picture']}'>")
@@ -47,8 +46,8 @@ $ ->
 				                                     data-standard-image='#{photo.images.standard_resolution.url}'
 				                                     src='#{photo.images.thumbnail.url}'>")
 
-	$('#facebook').on 'click', '.fb-photos img.slideshow', ->
-		image_url = $(@).attr('src');
+	$('.photos').on 'click', 'img.slideshow', ->
+		image_url = $(@).attr('data-standard-image');
 		hidden_field = "<input type='hidden' name='photos[]' value='#{image_url}'>"
 		$(@).toggleClass('selected')
 		if $(@).hasClass('selected')
