@@ -9,6 +9,7 @@ gem 'omniauth-instagram'
 gem 'fb_graph'
 gem 'koala'
 gem 'instagram'
+gem 'flickraw'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
