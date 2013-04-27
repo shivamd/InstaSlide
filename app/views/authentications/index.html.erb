@@ -4,19 +4,19 @@
   <p>beautiful, customizable slide shows.</p>
   </div>
   <div class="omniauth">
-	  <% if token?(@authentications, "facebook") %>
-      <p>You are logged in with facebook</p> 
+	  <% if facebook_token? %>
+      <p>You are logged in with facebook</p>
     <% else %>
       <%= link_to "Sign up with facebook", '/auth/facebook' %>
     <% end %>
 
-    <% if token?(@authentications, "instagram") %>
+    <% if instagram_token? %>
       <p>You are logged in with instragram </p>
     <% else %>
       <%= link_to "Sign up with instagram", '/auth/instagram' %>
     <% end %>
 
-    <% if token?(@authentications, "flickr") %>
+    <% if flickr_token? %>
       <p>You are logged in with flickr</p>
     <% else %>
       <%= link_to "Sign up with flickr", '/auth/flickr' %>
