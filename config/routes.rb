@@ -2,9 +2,9 @@ Instaslide::Application.routes.draw do
   resources :authentications, only: [:index, :create, :destroy]
   match '/auth/:provider/callback' => 'authentications#create'
   root to: 'authentications#index'
-  match '/slides/facebook-albums' => 'slides#facebook_albums'
-  match '/slides/:album_id/photos' => 'slides#facebook_photos'
-  match '/slides/instagram-photos' => 'slides#instagram_photos'
+  match '/photos/facebook-albums' => 'photos#facebook_albums'
+  match '/photos/:album_id/photos' => 'photos#facebook_photos'
+  match '/photos/instagram-photos' => 'photos#instagram_photos'
 
   resources :slides
   # The priority is based upon order of creation:
