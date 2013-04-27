@@ -11,6 +11,11 @@ $ ->
 		success: (albums) ->
 			renderAlbums(albums)
 			callToPhotos(albums)
+	$.ajax
+	  method: 'get'
+	  url: '/photos/instagram-photos'
+	  success: (photos) ->
+	  	renderInstagramPhotos(photos)
 
 	renderAlbums = (albums) ->
 		for album in albums
@@ -32,6 +37,11 @@ $ ->
 	  $("div##{album_id}").append("<div class='fb-photos'</div>")
 	  for photo in photos
 		  $("div##{album_id} .fb-photos").append("<img class='slideshow' src='#{photo['source']}' width='100' height='100'>")
+
+	renderInstagramPhotos = (photos) ->
+		for photo in photos
+			debugger
+			$("div.instagram-photos").append("<img class='slideshow' src='#{photo.images.thumbnail.url}'>")
 
 	$('#facebook').on 'click', '.fb-photos img.slideshow', ->
 		image_url = $(@).attr('src');
