@@ -9,7 +9,7 @@ class AuthenticationsController < ApplicationController
 		auth = Authentication.from_omniauth(omniauth)
 		if auth
 			session[:user_id] = auth.user_id
-		elsif current_user
+		elsif signed_in?
 		  current_user.authentications.create!(provider: omniauth['provider'], uid: omniauth['uid'], access_token: omniauth.credentials.token)
 		else
 			user = User.create(name: omniauth.info.name)
