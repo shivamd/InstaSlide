@@ -1,5 +1,6 @@
 class PhotosController < ApplicationController
-
+	include ApiHelper
+	respond_to :json
 	def facebook_albums
 		render json: fb_albums_info
 	end
