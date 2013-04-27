@@ -16,33 +16,67 @@ body {
   height: 100%;
   -webkit-box-shadow: 0 0 400px rgba(0, 0, 0, 0.9) inset;
   box-shadow: 0 0 400px rgba(0,0,0,0.9) inset;
+  z-index: -100;
 }
 
 
 .auth-button {
 	padding: 10px;
+	margin: 100px;
 	border-radius: 5px;
 	background: red;
 	color: white;
 	border: none;
 	margin-left: 105px;
-	font-weight: bold;
-	font-variant: small-caps;
 	font-size: 1.3em;
 	color: white;
 	text-decoration: none;
 }
 
+
 h1.logo {
 	font-size: 2.4em;
 	color: white;
-	text-align: center;
-	position: fixed;
-	top: 35%;
-	left: 49%;
-	margin-top: -50px;
-	margin-left: -100px;
-	text-shadow: 1px -1px px white;
 }
 
+div.logo {
+	margin: 200px 0 0 0;
+	h1 {
+		font-size: 2.4em;
+		color: white;
+	}
+}
+
+.center {
+	text-align: center;
+	.tagline-line {
+		border-top: 1px solid #56CDE3;
+		width: 140px;
+		height: 0;
+		margin: 10px auto;
+ }
+}
+
+.container {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0;
+
+}
+
+h3.tagline {
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+	font-weight: 300;
+	color: white;
+	text-transform: uppercase;
+}
+
+.omniauth {
+	div {
+		margin: 40px;
+	}
+	div:last-child a {
+		padding: 10px 25px;
+	}
+}
 

@@ -1,29 +1,41 @@
-<h1 class="logo">InstaSlide</h1>
-<div class="container">
-  <div class="border-top"></div>
-  <div id="content">
-  <p>beautiful, customizable slide shows.</p>
+<div class="container center">
+  <div class="columns">
+    <div class="logo">
+      <h1>InstaSlide</h1>
+    </div>
+      <div class="tagline-line"></div>
+      <h3 class="tagline">beautiful, customizable slide shows.</p>
+      <div class="tagline-line"></div>
   </div>
-  <div class="border-bottom"></div>
   <div class="omniauth">
-	  <% if facebook_token? %>
-      <p>You are logged in with facebook</p>
-    <% else %>
-      <%= link_to "sign up with facebook", '/auth/facebook', class: "auth-button" %>
+    <% unless signed_in? %>
+      <p class="sign-in">Sign in with</p>
     <% end %>
+    <div class="facebook">
+  	  <% if facebook_token? %>
+        <p>Facebook Access</p>
+      <% else %>
+        <%= link_to "Facebook", '/auth/facebook', class: "auth-button" %>
+      <% end %>
+    </div>
 
-    <% if instagram_token? %>
-      <p>You are logged in with instragram </p>
-    <% else %>
-      <%= link_to "sign up with instagram", '/auth/instagram', class: "auth-button" %>
-    <% end %>
+    <div class="instagram">
+      <% if instagram_token? %>
+        <p>Instagram Access</p>
+      <% else %>
+        <%= link_to "Instagram", '/auth/instagram', class: "auth-button" %>
+      <% end %>
+    </div>
 
+    <div class="flickr">
     <% if flickr_token? %>
-      <p>You are logged in with flickr</p>
+      <p>Flickr Access</p>
     <% else %>
-      <%= link_to "sign up with flickr", '/auth/flickr', class: "auth-button" %>
+      <%= link_to "Flickr", '/auth/flickr', class: "auth-button" %>
     <% end %>
+    </div>
   </div>
-  <%= link_to "create a slide", new_slide_path, class: "slide-button" %>
-
+<%= link_to "create a slide", new_slide_path, class: "slide-button auth-button" %>
 </div>
+
+
