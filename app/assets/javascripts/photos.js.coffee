@@ -7,7 +7,7 @@ $ ->
 
 	$.ajax
 		method:'get'
-		url: '/slides/facebook-albums'
+		url: '/photos/facebook-albums'
 		success: (albums) ->
 			renderAlbums(albums)
 			callToPhotos(albums)
@@ -24,7 +24,7 @@ $ ->
 	getPhotos = (album) ->
 		  $.ajax
 		    method: "get"
-		    url: "/slides/#{album['id']}/photos"
+		    url: "/photos/#{album['id']}/photos"
 		    success: (photos) ->
 		      renderPhotos(photos, album['id'])
 
