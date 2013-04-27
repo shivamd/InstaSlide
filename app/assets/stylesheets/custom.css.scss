@@ -5,3 +5,17 @@
 .selected {
 	border: 2px red solid;
 }
+body {
+	background-color: #45BCD2;
+}
+.vignette {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: 0 0 400px rgba(0, 0, 0, 0.9) inset;
+  box-shadow: 0 0 400px rgba(0,0,0,0.9) inset;
+}
+
+

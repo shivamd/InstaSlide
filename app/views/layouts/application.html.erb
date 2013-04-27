@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<div class="vignette"></div>
 	<% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert alert-#{key}") %>
   <% end %>
