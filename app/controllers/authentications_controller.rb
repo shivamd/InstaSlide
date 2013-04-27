@@ -1,7 +1,7 @@
 class AuthenticationsController < ApplicationController
 
 	def index
-		@authentications = current_user.authentications if current_user
+		@authentications = current_user.try(:authentications)
 	end
 
 	def create
