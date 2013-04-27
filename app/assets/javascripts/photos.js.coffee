@@ -40,8 +40,9 @@ $ ->
 
 	renderInstagramPhotos = (photos) ->
 		for photo in photos
-			debugger
-			$("div.instagram-photos").append("<img class='slideshow' src='#{photo.images.thumbnail.url}'>")
+			$("div.instagram-photos").append("<img class='slideshow'
+				                                     data-standard-image='#{photo.images.standard_resolution.url}'
+				                                     src='#{photo.images.thumbnail.url}'>")
 
 	$('#facebook').on 'click', '.fb-photos img.slideshow', ->
 		image_url = $(@).attr('src');
