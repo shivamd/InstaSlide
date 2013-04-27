@@ -4,6 +4,7 @@ Instaslide::Application.routes.draw do
   root to: 'authentications#index'
   match '/slides/facebook-albums' => 'slides#facebook_albums'
   match '/slides/:album_id/photos' => 'slides#facebook_photos'
+  match '/slides/instagram-photos' => 'slides#instagram_photos'
 
   resources :slides
   # The priority is based upon order of creation:
