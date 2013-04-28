@@ -1,4 +1,5 @@
 Instaslide::Application.routes.draw do
+  match '/signout' => 'sessions#destroy'
   match '/authentications' => redirect('/')
   resources :authentications, only: [:index, :create, :destroy]
   match '/auth/:provider/callback' => 'authentications#create'
