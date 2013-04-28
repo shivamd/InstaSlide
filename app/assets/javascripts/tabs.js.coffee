@@ -1,9 +1,9 @@
 $ ->
 	$('#facebook').show()
-	$('.tabs li').click (e) ->
+	$('.tabs div').click (e) ->
 		e.preventDefault()
 		id = $(@).find('a').attr 'href'
 		$('.photos > div').hide()
-		$('.tabs li.active').removeClass 'active'
+		$('.tabs div.active').removeClass 'active'
 		$(id).show()
 		$(@).addClass('active')

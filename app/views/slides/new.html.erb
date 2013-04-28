@@ -2,36 +2,38 @@
   <%= javascript_include_tag "photos" %>
   <%= javascript_include_tag "tabs" %>
 <% end %>
-<h1>Create a slide</h1>
+<div class="new-slide">
+	<h1>Create a slide</h1>
 
-<div class="slide-form">
-	<%= form_for @slide do |f| %>
-	  <%= render 'shared/error_messages', model: @slide %>
-	  <%= f.label :name %>
-	  <%= f.text_field :name %>
+	<div class="slide-form">
+		<%= form_for @slide do |f| %>
+		  <%= render 'shared/error_messages', model: @slide %>
+		  <%= f.label :name %>
+		  <%= f.text_field :name %>
 
-	  <%= f.label :description %>
-	  <%= f.text_area :description %>
+		  <%= f.label :description %>
+		  <%= f.text_area :description, size: "20x3" %>
 
-	  <%= f.submit "Create Slide" %>
-	<% end %>
-</div>
+		  <%= f.submit "Create Slide" %>
+		<% end %>
+	</div>
 
 
-<div class="photo-box">
-	<ul class="tabs">
-		<li class="active"><a href="#facebook">Facebook</a></li>
-		<li><a href="#instagram">Instagram</a></li>
-	</ul>
-	<div class="photos">
-		<div  id="facebook">
-		  <div class="main">
-		  </div>
+	<div class="photo-box">
+		<div class="tabs">
+			<div class="active"><a href="#facebook">Facebook</a></div>
+			<div><a href="#instagram">Instagram</a></div>
 		</div>
-		<div  id="instagram">
-			<div class="main">
-				<div class="instagram-photos">
+		<div class="photos">
+			<div  id="facebook">
+			  <div class="main">
+			  </div>
+			</div>
+			<div  id="instagram">
+				<div class="main">
+					<div class="instagram-photos">
 
+					</div>
 				</div>
 			</div>
 		</div>
