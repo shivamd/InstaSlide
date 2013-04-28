@@ -36,6 +36,9 @@
     </div>
   </div>
 <%= link_to "create a slide", new_slide_path, class: "slide-button auth-button" %>
+<% if signed_in? %>
+  <%= link_to "signout", signout_path, method: :delete %>
+<% end %>
 </div>
 
 
