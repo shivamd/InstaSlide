@@ -33,6 +33,15 @@ body {
 	text-decoration: none;
 }
 
+.omniauth {
+	padding-bottom: 30px;
+	.provider {
+		display: inline;
+		padding: 0;
+		margin: 0;
+	}
+
+}
 
 h1.logo {
 	font-size: 2.4em;
@@ -71,14 +80,7 @@ h3.tagline {
 	text-transform: uppercase;
 }
 
-.omniauth {
-	div {
-		margin: 40px;
-	}
-	div:last-child a {
-		padding: 10px 25px;
-	}
-}
+
 
 
 .new-slide {

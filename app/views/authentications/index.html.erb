@@ -11,27 +11,27 @@
     <% unless signed_in? %>
       <p class="sign-in">Sign in with</p>
     <% end %>
-    <div class="facebook">
+    <div class="facebook provider">
   	  <% if facebook_token? %>
-        <p>Facebook Access</p>
+        <%= image_tag "grey-facebook.png", size: "50x50", alt: "signed in with facebook" %>
       <% else %>
         <%= link_to image_tag("facebook-logo.jpg", alt: "facebook", size: "50x50"), '/auth/facebook'%>
       <% end %>
     </div>
 
-    <div class="instagram">
+    <div class="instagram provider">
       <% if instagram_token? %>
-        <p>Instagram Access</p>
+        <%= image_tag "grey-instagram.png", size: "50x50", alt: "signed in with instagram" %>
       <% else %>
         <%= link_to image_tag("instagram-logo.png", alt: "instagram", size: "50x50"), '/auth/instagram' %>
       <% end %>
     </div>
 
-    <div class="flickr">
+    <div class="flickr provider">
     <% if flickr_token? %>
-      <p>Flickr Access</p>
+      <%= image_tag "grey-flickr.png", alt: "signed in with flickr", size: "50x50" %>
     <% else %>
-      <%= link_to image_tag("flickr-logo.jpg", alt: "flickr", size: "50x50"), '/auth/flickr' %>
+      <%= link_to image_tag("flickr-logo.png", alt: "flickr", size: "50x50"), '/auth/flickr' %>
     <% end %>
     </div>
   </div>
