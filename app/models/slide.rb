@@ -5,9 +5,18 @@ class Slide < ActiveRecord::Base
 	belongs_to :user
 	has_many :photos
 
+	after_create :generate_url
+
 	def add_photos(photos, user_id)
 		photos.each do |photo|
 			self.photos.create(url: photo, user_id: user_id)
 		end
+	end
+
+	private
+
+	def generate_url
+		self.secure_url = SecureRandom.urlsafe_base64
+		self.save!
 	end
 end
