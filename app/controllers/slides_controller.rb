@@ -12,14 +12,15 @@ class SlidesController < ApplicationController
 		@slide = current_user.slides.build(params[:slide])
 		if @slide.save
 			@slide.add_photos(params[:photos], current_user.id)
-			redirect_to @slide
+			redirect_to "/slideshow/#{@slide.secure_url}"
 		else
 			render :new
 		end
 	end
 
 	def show
-		@slide = Slide.find(params[:id])
+		@slide = Slide.find_by_secure_url(params[:secure_url])
+		redirect_to root_url unless @slide
 		@photos = @slide.photos
 	end
 
