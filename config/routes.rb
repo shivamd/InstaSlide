@@ -8,7 +8,8 @@ Instaslide::Application.routes.draw do
   match '/photos/:album_id/photos' => 'photos#facebook_photos'
   match '/photos/instagram-photos' => 'photos#instagram_photos'
 
-  resources :slides
+  resources :slides, only: [:create, :new, :index]
+  match '/slideshow/:secure_string' => 'slides#show'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
