@@ -1,5 +1,5 @@
 class Slide < ActiveRecord::Base
-	attr_accessible :user_id, :name, :description
+	attr_accessible :user_id, :name, :description, :secure_url
 
 	validates :user_id, :name, :description, presence: true
 	belongs_to :user
