@@ -15,7 +15,7 @@
   	  <% if facebook_token? %>
         <p>Facebook Access</p>
       <% else %>
-        <%= link_to "Facebook", '/auth/facebook', class: "auth-button" %>
+        <%= link_to image_tag("facebook-logo.jpg", alt: "facebook", size: "50x50"), '/auth/facebook'%>
       <% end %>
     </div>
 
@@ -23,7 +23,7 @@
       <% if instagram_token? %>
         <p>Instagram Access</p>
       <% else %>
-        <%= link_to "Instagram", '/auth/instagram', class: "auth-button" %>
+        <%= link_to image_tag("instagram-logo.png", alt: "instagram", size: "50x50"), '/auth/instagram' %>
       <% end %>
     </div>
 
@@ -31,7 +31,7 @@
     <% if flickr_token? %>
       <p>Flickr Access</p>
     <% else %>
-      <%= link_to "Flickr", '/auth/flickr', class: "auth-button" %>
+      <%= link_to image_tag("flickr-logo.jpg", alt: "flickr", size: "50x50"), '/auth/flickr' %>
     <% end %>
     </div>
   </div>
