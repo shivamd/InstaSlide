@@ -1,10 +1,19 @@
+<% content_for :page_header do %>
+  <%= javascript_include_tag "slideshow" %>
+<% end %>
 <div class="slideshow">
-	<h1><%= @slide.name %></h1>
-	<p><%= @slide.description %></p>
+  <h1><%= @slide.name %></h1>
+  <p><%= @slide.description %></p>
 
-	<% @photos.each do |photo| %>
-	  <ul>
-	  	<li><%= image_tag photo.url %></li>
-	  </ul>
-	<% end %>
+  <% @photos.each do |photo| %>
+    <ul>
+      <li class="photo"><%= image_tag photo.url, size: "200x200" %></li>
+    </ul>
+  <% end %>
+  <div class="slide">
+    <div class="overlay"></div>
+    <div id="modal">
+      <div class="content">no javascript yet!</div> 
+    </div>
+  </div>
 </div>

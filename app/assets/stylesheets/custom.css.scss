@@ -1,12 +1,12 @@
 .fb-photos {
-	display: none;
+  display: none;
 }
 
 .selected {
-	border: 2px red solid;
+  border: 2px red solid;
 }
 body {
-	background-color: #45BCD2;
+  background-color: #45BCD2;
 }
 .vignette {
   position: fixed;
@@ -21,85 +21,143 @@ body {
 
 
 .auth-button {
-	padding: 10px;
-	margin: 100px;
-	border-radius: 5px;
-	background: red;
-	color: white;
-	border: none;
-	margin-left: 105px;
-	font-size: 1.3em;
-	color: white;
-	text-decoration: none;
+  padding: 10px;
+  margin: 100px;
+  border-radius: 5px;
+  background: red;
+  color: white;
+  border: none;
+  margin-left: 105px;
+  font-size: 1.3em;
+  color: white;
+  text-decoration: none;
 }
 
 .omniauth {
-	padding-bottom: 30px;
-	.provider {
-		display: inline;
-		padding: 0;
-		margin: 0;
-	}
+  padding-bottom: 30px;
+  .provider {
+    display: inline;
+    padding: 0;
+    margin: 0;
+      }
 
 }
 
 h1.logo {
-	font-size: 2.4em;
-	color: white;
+  font-size: 2.4em;
+  color: white;
 }
 
 div.logo {
-	margin: 200px 0 0 0;
-	h1 {
-		font-size: 2.4em;
-		color: white;
-	}
+  margin: 200px 0 0 0;
+  h1 {
+    font-size: 2.4em;
+    color: white;
+      }
 }
 
 .center {
-	text-align: center;
-	.tagline-line {
-		border-top: 1px solid #56CDE3;
-		width: 140px;
-		height: 0;
-		margin: 10px auto;
+  text-align: center;
+  .tagline-line {
+    border-top: 1px solid #56CDE3;
+    width: 140px;
+    height: 0;
+    margin: 10px auto;
  }
 }
 
 .container {
-	margin: 0 auto;
-	width: 100%;
-	padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0;
 
 }
 
 h3.tagline {
-	text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
-	font-weight: 300;
-	color: white;
-	text-transform: uppercase;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.4);
+  font-weight: 300;
+  color: white;
+  text-transform: uppercase;
 }
 
 
 
 
 .new-slide {
-	text-align: center;
-	margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
 
 div.tabs {
-	margin-left: 30%;
+  margin-left: 30%;
 }
 
 .photo-box {
-	height: 400px;
+  height: 400px;
 }
 
 
 a.signout {
-	position: absolute;
-	top: 0;
-	right: 0;
-	margin: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
 }
+
+
+
+div.slideshow {
+  ul{
+    li{
+      list-style-type: none;
+      float: left;
+      margin: 4px;
+      border: 1px solid black;
+      padding: 0;
+      height: 200px;
+      width: 200px
+    }
+  }  
+
+  div.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+
+  }
+
+  #modal {
+    position:absolute;
+    background: black;
+    padding:8px;  
+    height: 500px;
+    width: 700px;
+    top: 50%;
+    left: 50%;
+    margin-left: -400px;
+    margin-top: -250px;
+  }
+
+  .content {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin: 0 auto;
+    img {
+      text-align: center;
+      left: 25%;
+      max-height: 500px;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 8px 16px;
+    }
+  }
+  .slide{
+    display: none;
+  }
+}
+
