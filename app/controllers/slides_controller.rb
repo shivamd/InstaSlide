@@ -19,7 +19,7 @@ class SlidesController < ApplicationController
 	end
 
 	def show
-		@slide = Slide.find_by_secure_url(params[:secure_url])
+		@slide = Slide.find_by_secure_url(params[:secure_string])
 		redirect_to root_url unless @slide
 		@photos = @slide.photos
 	end
