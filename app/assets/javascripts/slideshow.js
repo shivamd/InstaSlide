@@ -16,7 +16,7 @@ var slideshow = {
   addListeners: function(){
     $('div.slideshow img').on("click",this.displaySlide);
     $('div.overlay').on("click", this.hideSlide);
-    $('body').on("keydown", this.checkEvent);
+    $('body').on("keydown", this.checkEvent.bind(this));
   },
 
   displaySlide: function(){
@@ -27,40 +27,40 @@ var slideshow = {
   },
 
   displayImage: function(){
-    $('div.content').html("<img src='"+slideshow.photos[slideshow.currentIndex]+"'>");
+    $('div.content').html("<img src='"+this.photos[this.currentIndex]+"'>");
   },
 
   checkEvent: function(event){
     if (event.which === 39){
-      slideshow.incrementIndex();
+      this.incrementIndex();
     } else if (event.which === 37){
-      slideshow.decrementIndex();
+      this.decrementIndex();
     }
-    slideshow.displayImage();
+    this.displayImage();
   },
 
   incrementIndex: function(){
-    if (slideshow.isLastPhoto()){
-         slideshow.currentIndex = 0
+    if (this.isLastPhoto()){
+        this.currentIndex = 0
     } else {
-	 slideshow.currentIndex += 1
+	this.currentIndex += 1
     }
   },
 
   decrementIndex: function(){
-    if (slideshow.isFirstPhoto()){
-        slideshow.currentIndex = slideshow.photos.length-1
+    if (this.isFirstPhoto()){
+        this.currentIndex = this.photos.length-1
     } else {
-	slideshow.currentIndex -= 1;
+	this.currentIndex -= 1;
     }
   },
   
   isLastPhoto: function(){
-    return slideshow.currentIndex === slideshow.photos.length-1;
+    return this.currentIndex === this.photos.length-1;
   },
 
   isFirstPhoto: function(){
-    return slideshow.currentIndex === 0;
+    return this.currentIndex === 0;
   },
 
   hideSlide: function(){
@@ -68,7 +68,8 @@ var slideshow = {
   },
 
   populatePhotos: function(){
-	          for (var i =0; i < $('li.photo').length; i++) { this.photos.push($($('li.photo img')[i]).attr('src')) }
-                  
+    for (var i =0; i < $('li.photo').length; i++) { 
+      this.photos.push($($('li.photo img')[i]).attr('src'));
+    }
   }
 }
